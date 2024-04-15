@@ -19,12 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator m_animator;
 
-    public LayerMask m_solidObject;
+    public Rigidbody2D m_rigidbody2D;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        m_rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -77,13 +77,7 @@ public class PlayerMovement : MonoBehaviour
             case PlayerState.WALK_DOWN:{
                 Vector3 pos = GetComponent<Transform>().position;
                 pos += m_moveDirection.normalized * m_moveSpeed * Time.fixedDeltaTime;
-                if(!isTouchSolidObject(pos)){
-                    Debug.Log("Can move");
-                    GetComponent<Transform>().position = pos;
-                }
-                else {
-                    Debug.Log("Not Move");
-                }
+                m_rigidbody2D.MovePosition(pos);
                 break;
             }
 
@@ -95,5 +89,4 @@ public class PlayerMovement : MonoBehaviour
         this.onAnimationUpdate();
     }
 
-    private bool isTouchSolidObject(Vector3 target) => Physics2D.OverlapCircle(target, 0.2f, m_solidObject) != null;
 }
