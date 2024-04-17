@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Furniture 4_21
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -953428255, guid: 0ea72d2e4e0741647bef5a5e3e384788, type: 3}
+  m_Sprite: {fileID: 773532700, guid: 715d8beb8b19efc49bfe84b662b57d02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
