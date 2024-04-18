@@ -17,21 +17,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerState m_playerState = PlayerState.IDLE;
 
-    public Animator m_animator;
+    [SerializeField]
+    private Animator m_animator;
 
-    public Rigidbody2D m_rigidbody2D;
+    [SerializeField]
+    private Rigidbody2D m_rigidbody2D;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_rigidbody2D = GetComponent<Rigidbody2D>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        this.onKeyPress();
-    }
+    public Item CurrentItem = new Item(ItemType.NONE);
+    
+
+    void Start() => m_rigidbody2D = GetComponent<Rigidbody2D>();
+
+    void Update() => this.onKeyPress();
+
 
     private void onKeyPress() {
         m_moveSpeed = 2.0f;
@@ -85,8 +84,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void FixedUpdate() {
-        this.onAnimationUpdate();
-    }
+    void FixedUpdate() => this.onAnimationUpdate();
 
 }
