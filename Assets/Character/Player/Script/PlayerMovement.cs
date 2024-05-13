@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     private void onKeyPress() {
-        m_moveSpeed = 2.0f;
+        m_moveSpeed = 3.0f;
 
         if(Input.GetKeyDown(KeyCode.A)){
             m_moveDirection.x = -1;
