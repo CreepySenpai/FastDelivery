@@ -6,13 +6,11 @@ public class ConsumeSpot : MonoBehaviour
 {
 
     // TODO(Creepy): Move to another file
-    [SerializeField]
     public static Sprite QuestionMaskSprite;
 
     [SerializeField]
     private CircleCollider2D m_CircleCollider;
 
-    [SerializeField]
     private Item m_currentItem = new Item(ItemType.NONE);
 
     void Start(){
@@ -36,6 +34,8 @@ public class ConsumeSpot : MonoBehaviour
                 Debug.Log($"Gonna Consume: {playerComp.CurrentItem.Type}");
                 
                 playerComp.CurrentItem.Type = ItemType.NONE;
+                
+                m_currentItem = ItemGenerator.GetRandomItem();
             }
             else {
                 Debug.Log("Not thing to consume");
