@@ -1,0 +1,85 @@
+<mxfile host="Electron" modified="2024-05-19T17:34:11.944Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="uEciBgOAh3M6QWCLFM9N" version="24.4.0" type="device">
+  <diagram name="Page-1" id="Uz_7iHaYMS4QwcFW_2bH">
+    <mxGraphModel dx="1292" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-1" value="sd LayItem" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=105;height=40;" vertex="1" parent="1">
+          <mxGeometry x="155" y="160" width="895" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-2" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="230" y="220" width="30" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-7" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="cPRxeH-m1XuoJ2JpmvrH-2">
+          <mxGeometry x="10" y="100" width="10" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-3" value="Player" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="215" y="260" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-4" value=":System" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="380" y="220" width="100" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-8" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="cPRxeH-m1XuoJ2JpmvrH-4">
+          <mxGeometry x="45" y="100" width="10" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-5" value=":Character" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="100" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-9" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="cPRxeH-m1XuoJ2JpmvrH-5">
+          <mxGeometry x="45" y="100" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-6" value=":Truck" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="820" y="220" width="100" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-10" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="cPRxeH-m1XuoJ2JpmvrH-6">
+          <mxGeometry x="45" y="100" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-11" value="Xem_Item()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="655" y="330" as="sourcePoint" />
+            <mxPoint x="865" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-12" value="Anh_Item" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="400" as="sourcePoint" />
+            <mxPoint x="655" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-13" value="Nhan_nut_space()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="cPRxeH-m1XuoJ2JpmvrH-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="250" y="450" as="sourcePoint" />
+            <mxPoint x="330" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-17" value="Xu_Ly_Lay_Item()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="470" as="sourcePoint" />
+            <mxPoint x="865" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-18" value="Hinh_anh_item_tren_character" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="869.5" y="540" as="sourcePoint" />
+            <mxPoint x="655" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-19" value="Ngau_nhien_Item_moi()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="432.75" y="600" as="sourcePoint" />
+            <mxPoint x="867.25" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cPRxeH-m1XuoJ2JpmvrH-20" value="Amh_Item_moi" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="cPRxeH-m1XuoJ2JpmvrH-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="865" y="660" as="sourcePoint" />
+            <mxPoint x="649.5" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

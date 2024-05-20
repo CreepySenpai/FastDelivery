@@ -1,0 +1,70 @@
+<mxfile host="Electron" modified="2024-05-19T16:49:01.557Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="3uJroW8TEWMJ2_tVRpvZ" version="24.4.0" type="device">
+  <diagram name="Page-1" id="hk3OA_4nrgn-RZBy3AWZ">
+    <mxGraphModel dx="757" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lmg-MeaENypl0ml6uCoa-1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;sd DieuKhienNhanVat&lt;/font&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=180;height=50;" vertex="1" parent="1">
+          <mxGeometry x="270" y="70" width="680" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-2" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;size=45;" vertex="1" parent="1">
+          <mxGeometry x="355" y="150" width="30" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-6" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="lmg-MeaENypl0ml6uCoa-2">
+          <mxGeometry x="10" y="90" width="10" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-3" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Player&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="335" y="190" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-4" value=":Character" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="760" y="150" width="100" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-7" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="lmg-MeaENypl0ml6uCoa-4">
+          <mxGeometry x="45" y="90" width="10" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-5" value=":System" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="540" y="150" width="110" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-8" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="lmg-MeaENypl0ml6uCoa-5">
+          <mxGeometry x="50" y="90" width="10" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-10" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="lmg-MeaENypl0ml6uCoa-5">
+          <mxGeometry x="55" y="110" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-11" value="Xu_ly_dieu_khien()" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="lmg-MeaENypl0ml6uCoa-10" parent="lmg-MeaENypl0ml6uCoa-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="90" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="90" y="90" />
+              <mxPoint x="90" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-9" value="Nhan_nut_dieu_khien()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="lmg-MeaENypl0ml6uCoa-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="375" y="250" as="sourcePoint" />
+            <mxPoint x="585" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-12" value="Xu_ly_hoat_anh_nhan_vat()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.368;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="lmg-MeaENypl0ml6uCoa-8" target="lmg-MeaENypl0ml6uCoa-7">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="580" y="310" as="sourcePoint" />
+            <mxPoint x="620" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-13" value="Thay_doi_vi_tri_nhan_vat()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="590" y="360.0000000000001" as="sourcePoint" />
+            <mxPoint x="375" y="360.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lmg-MeaENypl0ml6uCoa-14" value="Cap_nhat_vi_tri_moi()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="590" y="420.0000000000001" as="sourcePoint" />
+            <mxPoint x="375" y="420.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
