@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody2D m_rigidbody2D;
 
-
+    private bool m_isPlaying = true;
     public Item CurrentItem = new Item(ItemType.NONE);
     
 
@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
 
     private void onKeyPress() {
+        
+        if(!m_isPlaying) return;
+
         m_moveSpeed = 3.0f;
 
         if(Input.GetKeyDown(KeyCode.A)){
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void onAnimationUpdate(){
+        if(!m_isPlaying) return;
 
         switch(m_playerState){
             case PlayerState.IDLE:{
@@ -86,4 +90,5 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() => this.onAnimationUpdate();
 
+    public void SignalStop() => m_isPlaying = false;
 }

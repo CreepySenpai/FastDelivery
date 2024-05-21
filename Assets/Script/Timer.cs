@@ -12,6 +12,15 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private double m_remainTime;
 
+    [SerializeField]
+    private GameObject m_gameOverMenu;
+
+    [SerializeField]
+    private GameObject m_pauseButton;
+
+    [SerializeField]
+    private GameObject m_playerMovement;
+
     void Update()
     {
         if(m_remainTime > 0){
@@ -20,6 +29,9 @@ public class Timer : MonoBehaviour
         else {
             m_remainTime = 0;
             m_timerText.color = Color.red;
+            m_gameOverMenu.SetActive(true);
+            m_pauseButton.SetActive(false);
+            m_playerMovement.GetComponent<PlayerMovement>().SignalStop();
         }
         
         var minutes = Mathf.FloorToInt((float)m_remainTime / 60);
