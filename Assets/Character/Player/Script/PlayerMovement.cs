@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody2D m_rigidbody2D;
 
-    private bool m_isPlaying = true;
+    private bool m_isPlaying = false;
     public Item CurrentItem = new Item(ItemType.NONE);
     
 
@@ -90,5 +90,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() => this.onAnimationUpdate();
 
+    public void SignalActive() => m_isPlaying = true;
     public void SignalStop() => m_isPlaying = false;
 }
