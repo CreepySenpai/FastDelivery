@@ -29,9 +29,11 @@ public class ConsumeSpot : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)){
             var playerComp = other.GetComponent<PlayerMovement>();
+            var playerScore = other.GetComponent<PlayerScore>();
             if(playerComp.CurrentItem.Type != ItemType.NONE){
-
+                
                 Debug.Log($"Gonna Consume: {playerComp.CurrentItem.Type}");
+                playerScore.Score += (int)playerComp.CurrentItem.Type;
                 
                 playerComp.CurrentItem.Type = ItemType.NONE;
                 

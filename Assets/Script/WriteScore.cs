@@ -10,6 +10,6 @@ public class WriteScore : MonoBehaviour
 
     void Update()
     {
-        this.GetComponent<TextMeshProUGUI>().text = $"Your Score {m_player.GetComponent<PlayerScore>().Score.ToString()}";
+        this.GetComponent<TextMeshProUGUI>().text = $"Your Score: {m_player.GetComponent<PlayerScore>().Score.ToString()}";
     }
 }

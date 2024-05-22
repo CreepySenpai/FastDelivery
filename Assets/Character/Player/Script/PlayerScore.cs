@@ -6,15 +6,17 @@ public class PlayerScore : MonoBehaviour
 {
     public long Score;
 
-    void Start()
-    {
+    // TODO(Creepy): Move to level manager
+    public long LevelScore;
 
-    }
+    [SerializeField]
+    private GameObject m_gameWinMenu;
 
-    // Update is called once per frame
     void Update()
     {
-        Score += 1;
+        if(Score >= LevelScore) {
+            m_gameWinMenu.SetActive(true);
+        }
     }
 
     public void ResetScore() => Score = 0;

@@ -38,11 +38,11 @@ public class Timer : MonoBehaviour
         var seconds = Mathf.FloorToInt((float)m_remainTime % 60);
 
         m_timerText.text = seconds switch {
-            > 4 => "Start",
+            > 4 => "Ready",
             4 => "3",
             3 => "2",
             2 => "1",
-            1 => "Ready",
+            1 => "Start",
             _ => ""
         };
     }
