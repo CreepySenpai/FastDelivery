@@ -18,16 +18,21 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private GameObject m_remainTimeCounter;
 
+    void Start(){
+        m_remainTimeCounter.SetActive(false);
+    }
+
     void Update()
     {
         if(m_remainTime > 0){
             m_remainTime -= Time.deltaTime;
         }
         else {
-            m_remainTime = 0;
-            m_timerText.color = Color.red;
-            m_remainTimeCounter.GetComponent<TimeCounter>().SignalActive();
+            m_remainTimeCounter.SetActive(true);
             m_playerMovement.GetComponent<PlayerMovement>().SignalActive();
+            
+            m_remainTime = 0;
+            gameObject.SetActive(false);
         }
         
         var seconds = Mathf.FloorToInt((float)m_remainTime % 60);
