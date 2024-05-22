@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameOverMenu : MonoBehaviour
 {
-    void Start(){
-
-    }
+    // [SerializeField]
+    // private GameObject m_gameOverPanel;
 
     [SerializeField]
     private GameObject m_optionPanel;
+
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
