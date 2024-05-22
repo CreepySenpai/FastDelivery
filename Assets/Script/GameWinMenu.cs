@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class GameOverMenu : MonoBehaviour
+public class GameWinMenu : MonoBehaviour
 {
-    void Start(){
-
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     [SerializeField]
