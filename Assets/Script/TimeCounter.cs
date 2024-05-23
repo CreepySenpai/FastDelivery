@@ -21,7 +21,8 @@ public class TimeCounter : MonoBehaviour
     [SerializeField]
     private GameObject m_playerMovement;
 
-    private bool m_isPlaying = false;
+    [SerializeField]
+    private GameObject m_remainTimePanel;
 
     private void Start(){
         var minutes = Mathf.FloorToInt((float)m_remainTime / 60);
@@ -31,7 +32,6 @@ public class TimeCounter : MonoBehaviour
 
     private void Update()
     {
-        if(!m_isPlaying) return;
 
         if(m_remainTime > 0){
             m_remainTime -= Time.deltaTime;
@@ -42,6 +42,7 @@ public class TimeCounter : MonoBehaviour
             m_gameOverMenu.SetActive(true);
             m_pauseButton.SetActive(false);
             m_playerMovement.GetComponent<PlayerMovement>().SignalStop();
+            m_remainTimePanel.SetActive(false);
         }
         
         var minutes = Mathf.FloorToInt((float)m_remainTime / 60);
@@ -49,7 +50,4 @@ public class TimeCounter : MonoBehaviour
         
         m_timerText.text = string.Format($"{minutes:00}:{seconds:00}");
     }
-
-    public void SignalActive() => m_isPlaying = true;
-    public void SignalStop() => m_isPlaying = false;
 }
