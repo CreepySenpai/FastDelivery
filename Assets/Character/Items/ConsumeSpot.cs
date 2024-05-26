@@ -11,7 +11,14 @@ public class ConsumeSpot : MonoBehaviour
     [SerializeField]
     private CircleCollider2D m_CircleCollider;
 
+    [SerializeField]
+    private GameObject m_player;
+
+    private bool m_isPlayerContact = false;
+
     private Item m_currentItem = new Item(ItemType.NONE);
+
+    
 
     void Start(){
         QuestionMaskSprite = Resources.Load<Sprite>("Item_Delivery/Question_Mark");
@@ -21,15 +28,13 @@ public class ConsumeSpot : MonoBehaviour
         Debug.Log($"Gonna Create Random Item: ${m_currentItem.Type.ToString()}");
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = m_currentItem.Sprite;
-    }
-
-    private void OnTriggerStay2D(Collider2D other) {
+    private void Update() {
+        if(!m_isPlayerContact) return;
 
         if(Input.GetKeyDown(KeyCode.Space)){
-            var playerComp = other.GetComponent<PlayerMovement>();
-            var playerScore = other.GetComponent<PlayerScore>();
+            Debug.Log("Anh Pressed");
+            var playerComp = m_player.GetComponent<PlayerMovement>();
+            var playerScore = m_player.GetComponent<PlayerScore>();
             if(playerComp.CurrentItem.Type != ItemType.NONE){
                 
                 Debug.Log($"Gonna Consume: {playerComp.CurrentItem.Type}");
@@ -43,10 +48,15 @@ public class ConsumeSpot : MonoBehaviour
                 Debug.Log("Not thing to consume");
             }
         }
-        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = m_currentItem.Sprite;
+        m_isPlayerContact = true;
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = QuestionMaskSprite;
+        m_isPlayerContact = false;
     }
 }

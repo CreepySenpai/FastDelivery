@@ -7,6 +7,11 @@ public class TriggerSpot : MonoBehaviour
 {
     private CircleCollider2D m_CircleCollider;
 
+    [SerializeField]
+    private GameObject m_player;
+
+    private bool m_isPlayerContact = false;
+
     // Note(Creepy): Call Awake because it call before Start() -> GetRandomItem()
     void Awake(){
         ItemGenerator.AddItem(new Item(ItemType.APPLE, "Item_Delivery/Book"));
@@ -14,12 +19,11 @@ public class TriggerSpot : MonoBehaviour
         ItemGenerator.AddItem(new Item(ItemType.MAP, "Item_Delivery/Book"));
     }
 
-    private void OnTriggerEnter2D(Collider2D other) => gameObject.transform.GetChild(0).gameObject.SetActive(true);
+    private void Update() {
+        if(!m_isPlayerContact) return;
 
-    private void OnTriggerStay2D(Collider2D other) {
-        
         if(Input.GetKeyDown(KeyCode.Space)){
-            var playerComp = other.GetComponent<PlayerMovement>();
+            var playerComp = m_player.GetComponent<PlayerMovement>();
 
             if(playerComp.CurrentItem.Type == ItemType.NONE){
                 playerComp.CurrentItem = ItemGenerator.GetRandomItem();
@@ -29,8 +33,15 @@ public class TriggerSpot : MonoBehaviour
                 Debug.Log("Current Hold");
             }
         }
-        
     }
 
-    private void OnTriggerExit2D(Collider2D other) => gameObject.transform.GetChild(0).gameObject.SetActive(false);
+    private void OnTriggerEnter2D(Collider2D other) {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        m_isPlayerContact = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        m_isPlayerContact = false;
+    }
 }

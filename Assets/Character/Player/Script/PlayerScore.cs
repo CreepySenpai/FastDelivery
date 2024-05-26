@@ -12,12 +12,19 @@ public class PlayerScore : MonoBehaviour
     [SerializeField]
     private GameObject m_gameWinMenu;
 
+    // [SerializeField]
+    // private GameObject m_scoreManager;
+
     void Update()
     {
         if(Score >= LevelScore) {
             m_gameWinMenu.SetActive(true);
         }
     }
+
+    // public void AddScore(int score){
+    //     m_scoreManager.GetComponent<ScoreManager>().AddScore(score);
+    // }
 
     public void ResetScore() => Score = 0;
 }

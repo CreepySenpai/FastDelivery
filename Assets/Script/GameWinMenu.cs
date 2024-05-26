@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class GameWinMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     [SerializeField]
     private GameObject m_optionPanel;
+
+    [SerializeField]
+    private GameObject m_nextLevelPanel;
+
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
@@ -24,8 +22,8 @@ public class GameWinMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void PlayNextLevel() {
-        
+    public void SelectLevel(){
+        m_nextLevelPanel.SetActive(true);
     }
 
     public void Option(){

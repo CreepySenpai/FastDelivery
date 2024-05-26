@@ -11,6 +11,9 @@ public class GameOverMenu : MonoBehaviour
     [SerializeField]
     private GameObject m_optionPanel;
 
+    [SerializeField]
+    private GameObject m_nextLevelPanel;
+
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
@@ -20,6 +23,10 @@ public class GameOverMenu : MonoBehaviour
     public void PlayAgain(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+    }
+
+    public void SelectLevel(){
+        m_nextLevelPanel.SetActive(true);
     }
 
     public void Option(){
