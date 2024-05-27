@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour
 {
-    public long Score;
-
     // TODO(Creepy): Move to level manager
     public long LevelScore;
 
     [SerializeField]
     private GameObject m_gameWinMenu;
 
-    // [SerializeField]
-    // private GameObject m_scoreManager;
+    [SerializeField]
+    private GameObject m_scoreManager;
 
     void Update()
     {
-        if(Score >= LevelScore) {
+        if(m_scoreManager.GetComponent<ScoreManager>().GetCurrentScore() > LevelScore){
             UnlockNewLevel();
             m_gameWinMenu.SetActive(true);
+            // gameObject.SetActive(false);
         }
+
     }
 
     void UnlockNewLevel(){
@@ -33,9 +33,11 @@ public class PlayerScore : MonoBehaviour
         // }
     }
 
-    // public void AddScore(int score){
-    //     m_scoreManager.GetComponent<ScoreManager>().AddScore(score);
-    // }
+    public void AddScore(int score){
+        m_scoreManager.GetComponent<ScoreManager>().AddScore(score);
+    }
 
-    public void ResetScore() => Score = 0;
+    public void ResetScore() => m_scoreManager.GetComponent<ScoreManager>().ResetScore();
+
+    public int GetScore() => m_scoreManager.GetComponent<ScoreManager>().GetCurrentScore();
 }

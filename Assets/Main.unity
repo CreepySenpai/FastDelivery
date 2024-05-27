@@ -3381,8 +3381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentScoreImage: {fileID: 838782876}
-  m_totalScore: 100
+  m_totalScore: 1000
   m_currentScore: 0
+  m_scoreText: {fileID: 1673105058}
 --- !u!1 &843483166
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,7 +4059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timerText: {fileID: 1077701731}
-  m_remainTime: 10
+  m_remainTime: 30
   m_gameOverMenu: {fileID: 1670762508}
   m_pauseButton: {fileID: 1971788466}
   m_playerMovement: {fileID: 1900597153}
@@ -8652,9 +8653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3c71f0c2db53e40861560d6909778b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
   LevelScore: 1000
   m_gameWinMenu: {fileID: 1119294155}
+  m_scoreManager: {fileID: 838782874}
 --- !u!1 &1903343046
 GameObject:
   m_ObjectHideFlags: 0

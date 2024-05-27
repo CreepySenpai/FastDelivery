@@ -18,8 +18,6 @@ public class ConsumeSpot : MonoBehaviour
 
     private Item m_currentItem = new Item(ItemType.NONE);
 
-    
-
     void Start(){
         QuestionMaskSprite = Resources.Load<Sprite>("Item_Delivery/Question_Mark");
         m_CircleCollider = GetComponent<CircleCollider2D>();
@@ -32,13 +30,21 @@ public class ConsumeSpot : MonoBehaviour
         if(!m_isPlayerContact) return;
 
         if(Input.GetKeyDown(KeyCode.Space)){
-            Debug.Log("Anh Pressed");
+
             var playerComp = m_player.GetComponent<PlayerMovement>();
             var playerScore = m_player.GetComponent<PlayerScore>();
             if(playerComp.CurrentItem.Type != ItemType.NONE){
-                
+
                 Debug.Log($"Gonna Consume: {playerComp.CurrentItem.Type}");
-                playerScore.Score += (int)playerComp.CurrentItem.Type;
+
+                if(playerComp.CurrentItem.Type == m_currentItem.Type){
+                    playerScore.AddScore((int)playerComp.CurrentItem.Type);
+                }
+                else {
+                    playerScore.AddScore(-((int)playerComp.CurrentItem.Type / 10));
+                }
+
+                Debug.Log("Consumed");
                 
                 playerComp.CurrentItem.Type = ItemType.NONE;
                 
