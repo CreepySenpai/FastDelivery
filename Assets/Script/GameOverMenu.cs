@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class GameOverMenu : MonoBehaviour
 {
-    // [SerializeField]
-    // private GameObject m_gameOverPanel;
-
     [SerializeField]
-    private GameObject m_nextLevelPanel;
+    private GameObject m_menuController;
 
     public void Home()
     {
@@ -23,6 +20,6 @@ public class GameOverMenu : MonoBehaviour
     }
 
     public void SelectLevel(){
-        m_nextLevelPanel.SetActive(true);
+        m_menuController.GetComponent<MenuController>().ActiveLevelMenu();
     }
 }

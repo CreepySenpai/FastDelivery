@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class GameWinMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject m_menuController;
+
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
@@ -17,6 +20,6 @@ public class GameWinMenu : MonoBehaviour
     }
 
     public void NextLevel(){
-
+        m_menuController.GetComponent<MenuController>().ActiveLevelMenu();
     }
 }
