@@ -22,6 +22,9 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private GameObject m_remainTimePanel;
 
+    [SerializeField]
+    private GameObject m_backPackPanel;
+
     public void ActiveWinMenu() => m_gameWinMenu.SetActive(true);
     public void DisableWinMenu() => m_gameWinMenu.SetActive(false);
 
@@ -40,4 +43,7 @@ public class MenuController : MonoBehaviour
 
     public void ActiveRemainTime() => m_remainTimePanel.SetActive(true);
     public void DisableRemainTime() => m_remainTimePanel.SetActive(false);
+
+    public void ActivePlayerBackPack() => m_backPackPanel.SetActive(true);
+    public void DisablePlayerBackPack() => m_backPackPanel.SetActive(false);
 }

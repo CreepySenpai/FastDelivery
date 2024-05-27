@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerItem : MonoBehaviour
 {
     [SerializeField]
-    private Item m_currentItem = new Item(ItemType.NONE);
+    private Item m_currentItem = new(ItemType.NONE);
 
     public ItemType GetCurrentType() => m_currentItem.Type;
 
