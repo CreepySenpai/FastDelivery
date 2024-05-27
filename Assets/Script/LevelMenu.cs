@@ -17,6 +17,17 @@ public class LevelMenu : MonoBehaviour
         for (int i = 0; i < levelCount; ++i) {
             m_levelButtons[i] = gameObject.transform.GetChild(i).GetComponent<Button>();
         }
+
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+        for(int i = 0; i < levelCount; ++i) {
+            m_levelButtons[i].interactable = false;
+        }
+
+        for(int i = 0; i < unlockedLevel; ++i) {
+            m_levelButtons[i].interactable = true;
+        }
+        
     }
 
     public void OpenLevel(int level) {

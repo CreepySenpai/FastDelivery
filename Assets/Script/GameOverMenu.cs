@@ -9,9 +9,6 @@ public class GameOverMenu : MonoBehaviour
     // private GameObject m_gameOverPanel;
 
     [SerializeField]
-    private GameObject m_optionPanel;
-
-    [SerializeField]
     private GameObject m_nextLevelPanel;
 
     public void Home()
@@ -27,9 +24,5 @@ public class GameOverMenu : MonoBehaviour
 
     public void SelectLevel(){
         m_nextLevelPanel.SetActive(true);
-    }
-
-    public void Option(){
-        m_optionPanel.SetActive(true);
     }
 }

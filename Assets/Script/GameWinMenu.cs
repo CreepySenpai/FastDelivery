@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class GameWinMenu : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject m_optionPanel;
-
-    [SerializeField]
-    private GameObject m_nextLevelPanel;
-
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
@@ -22,11 +16,7 @@ public class GameWinMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void SelectLevel(){
-        m_nextLevelPanel.SetActive(true);
-    }
+    public void NextLevel(){
 
-    public void Option(){
-        m_optionPanel.SetActive(true);
     }
 }

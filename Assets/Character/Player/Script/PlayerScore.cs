@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour
 {
@@ -18,8 +19,18 @@ public class PlayerScore : MonoBehaviour
     void Update()
     {
         if(Score >= LevelScore) {
+            UnlockNewLevel();
             m_gameWinMenu.SetActive(true);
         }
+    }
+
+    void UnlockNewLevel(){
+        PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+        // if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedLevel")){
+        //     PlayerPrefs.SetInt("ReachedLevel", SceneManager.GetActiveScene().buildIndex);
+        //     PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+        //     PlayerPrefs.Save();
+        // }
     }
 
     // public void AddScore(int score){
