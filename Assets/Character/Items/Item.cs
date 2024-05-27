@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ItemType : int {
-    NONE = 0, APPLE = 100, BOOK = 200, MAP = 300
+    NONE = 0, APPLE = 10, BOOK = 12, BANANA = 14, EGG = 16, CABBAGE = 18, FLOUR = 20, MILK = 22, MEAT = 24
+    , CHOCOLATE = 26, OIL = 28, POTATO_CHIP = 30, COKE = 32, GLOVES = 34, DUCK = 36, POTATO_BAG = 38
+
 }
 
 public class Item
