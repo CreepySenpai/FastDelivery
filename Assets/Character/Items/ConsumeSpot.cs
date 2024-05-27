@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ConsumeSpot : MonoBehaviour
 {
-
-    // TODO(Creepy): Move to another file
-    public static Sprite QuestionMaskSprite;
-
     [SerializeField]
     private CircleCollider2D m_CircleCollider;
 
@@ -19,7 +15,8 @@ public class ConsumeSpot : MonoBehaviour
     private Item m_currentItem = new Item(ItemType.NONE);
 
     void Start(){
-        QuestionMaskSprite = Resources.Load<Sprite>("Item_Delivery/Question_Mark");
+        Item.QuestionMaskSprite = Resources.Load<Sprite>("Item_Delivery/Question_Mark");
+        
         m_CircleCollider = GetComponent<CircleCollider2D>();
 
         m_currentItem = ItemGenerator.GetRandomItem();
@@ -31,28 +28,27 @@ public class ConsumeSpot : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)){
 
-            var playerComp = m_player.GetComponent<PlayerMovement>();
+            var playerItem = m_player.GetComponent<PlayerItem>();
             var playerScore = m_player.GetComponent<PlayerScore>();
-            if(playerComp.CurrentItem.Type != ItemType.NONE){
 
-                Debug.Log($"Gonna Consume: {playerComp.CurrentItem.Type}");
+            if(playerItem.IsValidItem()){
 
-                if(playerComp.CurrentItem.Type == m_currentItem.Type){
-                    playerScore.AddScore((int)playerComp.CurrentItem.Type);
+                Debug.Log($"Gonna Consume: {playerItem.GetCurrentType()}");
+
+                if(playerItem.GetCurrentType() == m_currentItem.Type) {
+                    playerScore.AddScore((int)playerItem.GetCurrentType());
                 }
                 else {
-                    playerScore.AddScore(-((int)playerComp.CurrentItem.Type / 10));
+                    playerScore.AddScore(-((int)playerItem.GetCurrentType() / 10));
                 }
 
-                Debug.Log("Consumed");
-                
-                playerComp.CurrentItem.Type = ItemType.NONE;
-                
+                playerItem.ResetItem();
                 m_currentItem = ItemGenerator.GetRandomItem();
             }
             else {
                 Debug.Log("Not thing to consume");
             }
+
         }
     }
 
@@ -62,7 +58,7 @@ public class ConsumeSpot : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = QuestionMaskSprite;
+        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = Item.QuestionMaskSprite;
         m_isPlayerContact = false;
     }
 }

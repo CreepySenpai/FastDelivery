@@ -35,15 +35,16 @@ public class TriggerSpot : MonoBehaviour
         if(!m_isPlayerContact) return;
 
         if(Input.GetKeyDown(KeyCode.Space)){
-            var playerComp = m_player.GetComponent<PlayerMovement>();
+            var playerItem = m_player.GetComponent<PlayerItem>();
 
-            if(playerComp.CurrentItem.Type == ItemType.NONE){
-                playerComp.CurrentItem = ItemGenerator.GetRandomItem();
-                Debug.Log($"Random: {playerComp.CurrentItem.Type}");
+            if(!playerItem.IsValidItem()){
+                playerItem.SetCurrentItem(ItemGenerator.GetRandomItem());
+                Debug.Log($"Random: {playerItem.GetCurrentType()}");
             }
             else {
                 Debug.Log("Current Hold");
             }
+            
         }
     }
 

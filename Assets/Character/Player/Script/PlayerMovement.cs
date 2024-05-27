@@ -24,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
 
     private bool m_isPlaying = false;
-    public Item CurrentItem = new Item(ItemType.NONE);
-    
 
     void Start() => m_rigidbody2D = GetComponent<Rigidbody2D>();
 

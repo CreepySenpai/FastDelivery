@@ -22,4 +22,7 @@ public class Item
     public Item(ItemType type, string path) : this(type) {
         Sprite = Resources.Load<Sprite>(path);
     }
+
+
+    public static Sprite QuestionMaskSprite;
 }
