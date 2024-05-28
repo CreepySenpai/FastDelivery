@@ -14,6 +14,7 @@ public class LevelMenu : MonoBehaviour
         int levelCount = gameObject.transform.childCount;
         
         m_levelButtons = new Button[levelCount];
+        
         for (int i = 0; i < levelCount; ++i) {
             m_levelButtons[i] = gameObject.transform.GetChild(i).GetComponent<Button>();
         }

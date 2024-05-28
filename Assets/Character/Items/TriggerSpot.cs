@@ -53,6 +53,7 @@ public class TriggerSpot : MonoBehaviour
 
             if(!playerItem.IsValidItem()){
                 playerItem.SetCurrentItem(m_randomQueue.Dequeue()); // Get Item From Random Queue
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = m_randomQueue.Peek().Sprite;
                 Debug.Log($"Random: {playerItem.GetCurrentType()}");
             }
             else {
@@ -63,14 +64,21 @@ public class TriggerSpot : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = m_randomQueue.Peek().Sprite;
+        var generatedBox = gameObject.transform.GetChild(0).gameObject;
+        generatedBox.SetActive(true);
+
+        var showItemBox = generatedBox.transform.GetChild(1);
+        showItemBox.GetComponent<SpriteRenderer>().sprite = m_randomQueue.Peek().Sprite;
         m_isPlayerContact = true;
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = Item.QuestionMaskSprite;
+        var generatedBox = gameObject.transform.GetChild(0).gameObject;
+        generatedBox.SetActive(false);
+
+        var showItemBox = generatedBox.transform.GetChild(1);
+        showItemBox.GetComponent<SpriteRenderer>().sprite = Item.QuestionMaskSprite;
+
         m_isPlayerContact = false;
     }
 }

@@ -38,6 +38,7 @@ public class PlayerScore : MonoBehaviour
 
     public void AddScore(int score){
         m_scoreManager.GetComponent<ScoreManager>().AddScore(score);
+        ScorePopup.Create(transform.position, score);
     }
 
     public void ResetScore() => m_scoreManager.GetComponent<ScoreManager>().ResetScore();

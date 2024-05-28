@@ -10,9 +10,10 @@ public class ConsumeSpot : MonoBehaviour
     [SerializeField]
     private GameObject m_player;
 
+    [SerializeField]
     private bool m_isPlayerContact = false;
 
-    private Item m_currentItem = new Item(ItemType.NONE);
+    private Item m_currentItem = new(ItemType.NONE);
 
     void Start(){
         Item.QuestionMaskSprite = Resources.Load<Sprite>("Item_Delivery/Question_Mark");

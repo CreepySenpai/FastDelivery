@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class ItemGenerator{
-    private static List<Item> s_itemList = new List<Item>();
+    private static List<Item> s_itemList = new();
 
     public static void AddItem(Item item) => s_itemList.Add(item);
 
