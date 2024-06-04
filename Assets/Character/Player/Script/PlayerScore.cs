@@ -11,17 +11,13 @@ public class PlayerScore : MonoBehaviour
     [SerializeField]
     private GameObject m_scoreManager;
 
-    [SerializeField]
-    private GameObject m_menuController;
-
     void Update()
     {
         if(m_scoreManager.GetComponent<ScoreManager>().GetCurrentScore() > LevelScore){
             UnlockNewLevel();
 
-            var menuController = m_menuController.GetComponent<MenuController>();
-            menuController.DisableTimeCounter();
-            menuController.ActiveWinMenu();
+            MenuController.GetInstance().DisableTimeCounter();
+            MenuController.GetInstance().ActiveWinMenu();
             // gameObject.SetActive(false);
         }
 

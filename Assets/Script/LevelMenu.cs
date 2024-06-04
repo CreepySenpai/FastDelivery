@@ -8,7 +8,9 @@ public class LevelMenu : MonoBehaviour
 {
     [SerializeField]
     private Button[] m_levelButtons;
-    
+
+    [SerializeField]
+    private LevelLoader m_levelLoader;
 
     private void Awake() {
         int levelCount = gameObject.transform.childCount;
@@ -32,6 +34,7 @@ public class LevelMenu : MonoBehaviour
     }
 
     public void OpenLevel(int level) {
-        SceneManager.LoadScene($"Level_{level}");
+        // SceneManager.LoadScene($"Level_{level}");
+        m_levelLoader.LoadLevel(level);
     }
 }

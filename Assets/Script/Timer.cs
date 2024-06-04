@@ -29,6 +29,7 @@ public class Timer : MonoBehaviour
         }
         else {
             m_remainTimeCounter.SetActive(true);
+            MenuController.GetInstance().ActivePauseButton();
             m_playerMovement.GetComponent<PlayerMovement>().SignalActive();
             
             m_remainTime = 0;
