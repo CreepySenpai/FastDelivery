@@ -15,9 +15,6 @@ public class TimeCounter : MonoBehaviour
     [SerializeField]
     private GameObject m_playerMovement;
 
-    [SerializeField]
-    private GameObject m_menuController;
-
     private void Start(){
         var minutes = Mathf.FloorToInt((float)m_remainTime / 60);
         var seconds = Mathf.FloorToInt((float)m_remainTime % 60);
@@ -34,14 +31,12 @@ public class TimeCounter : MonoBehaviour
             m_remainTime = 0;
             m_timerText.color = Color.red;
 
-            var menuController = m_menuController.GetComponent<MenuController>();
-
-            menuController.ActiveGameOverMenu();
-            menuController.DisablePauseButton();
+            MenuController.GetInstance().ActiveGameOverMenu();
+            MenuController.GetInstance().DisablePauseButton();
 
             m_playerMovement.GetComponent<PlayerMovement>().SignalStop();
 
-            menuController.DisableRemainTime();
+            MenuController.GetInstance().DisableRemainTime();
 
         }
         

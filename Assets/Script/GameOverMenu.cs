@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class GameOverMenu : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject m_menuController;
-
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
@@ -20,6 +17,6 @@ public class GameOverMenu : MonoBehaviour
     }
 
     public void SelectLevel(){
-        m_menuController.GetComponent<MenuController>().ActiveLevelMenu();
+        MenuController.GetInstance().ActiveLevelMenu();
     }
 }

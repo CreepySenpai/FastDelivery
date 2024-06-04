@@ -25,6 +25,16 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private GameObject m_backPackPanel;
 
+    private static MenuController instance = null;
+
+    public static MenuController GetInstance() {
+        if (instance == null)
+        {
+            instance = GameObject.Find("MenuController").GetComponent<MenuController>();
+        }
+        return instance;
+    }
+
     public void ActiveWinMenu() => m_gameWinMenu.SetActive(true);
     public void DisableWinMenu() => m_gameWinMenu.SetActive(false);
 
