@@ -13,6 +13,10 @@ public class PlayerScore : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.B)){
+            UnlockNewLevel();
+        }
+
         if(m_scoreManager.GetComponent<ScoreManager>().GetCurrentScore() > LevelScore){
             UnlockNewLevel();
 
@@ -25,6 +29,7 @@ public class PlayerScore : MonoBehaviour
 
     void UnlockNewLevel(){
         PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+        
         // if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedLevel")){
         //     PlayerPrefs.SetInt("ReachedLevel", SceneManager.GetActiveScene().buildIndex);
         //     PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
