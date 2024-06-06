@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class GameOverMenu : MonoBehaviour
 {
+    [SerializeField]
+    private LevelLoader m_levelLoader;
     public void Home()
     {
-        SceneManager.LoadScene("Main_Menu");
+        // GameAssetsController.GetInstance().LoadingScene.SetActive(false);
+        m_levelLoader.LoadLevel("Main_Menu");
         Time.timeScale = 1;
     }
 
     public void PlayAgain(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // GameAssetsController.GetInstance().LoadingScene.SetActive(false);
+
+        m_levelLoader.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
 
