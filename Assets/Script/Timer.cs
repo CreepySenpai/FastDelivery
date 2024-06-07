@@ -18,9 +18,6 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private GameObject m_remainTimeCounter;
 
-    [SerializeField]
-    private AudioController m_audioController;
-
     void Start(){
         m_remainTimeCounter.SetActive(false);
     }
@@ -42,7 +39,10 @@ public class Timer : MonoBehaviour
         var seconds = Mathf.FloorToInt((float)m_remainTime % 60);
 
         if(seconds > 4){
-            m_audioController.PlayMusic("TimeStartCounter");
+            AudioController.GetInstance().PlayMusic("TimeStartCounter");
+        }
+        else if(seconds < 1){
+            AudioController.GetInstance().PlayMusic("GameBattle");
         }
 
         m_timerText.text = seconds switch {

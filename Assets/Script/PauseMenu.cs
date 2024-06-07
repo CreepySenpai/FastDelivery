@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        AudioController.GetInstance().PauseMusic("GameBattle");
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
@@ -24,6 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        AudioController.GetInstance().ContinueMusic("GameBattle");
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }

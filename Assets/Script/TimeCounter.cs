@@ -28,6 +28,8 @@ public class TimeCounter : MonoBehaviour
             m_levelInfo.RemainTime -= Time.deltaTime;
         }
         else {
+            AudioController.GetInstance().StopMusic("GameBattle");
+            
             m_levelInfo.RemainTime = 0;
             m_timerText.color = Color.red;
 

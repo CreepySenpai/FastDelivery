@@ -8,15 +8,14 @@ public class PlayerScore : MonoBehaviour
     [SerializeField]
     private ScoreManager m_scoreManager;
 
-    [SerializeField]
-    private AudioController m_audioController;
-
     private bool m_isUnlocked = false;
 
     void Update()
     {
         if(!m_isUnlocked){
             if(m_scoreManager.GetCurrentScore() >= m_scoreManager.GetTotalScore()){
+                AudioController.GetInstance().StopMusic("GameBattle");
+                
                 UnlockNewLevel();
 
                 MenuController.GetInstance().DisableTimeCounter();
@@ -45,12 +44,6 @@ public class PlayerScore : MonoBehaviour
 
     public void AddScore(int score){
         m_scoreManager.AddScore(score);
-        if(score < 0) {
-            m_audioController.PlayMusic("SubScore");
-        }
-        else {
-            m_audioController.PlayMusic("AddScore");
-        }
         ScorePopup.Create(transform.position, score);
     }
 

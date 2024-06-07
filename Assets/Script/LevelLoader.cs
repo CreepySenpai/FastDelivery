@@ -22,16 +22,7 @@ public class LevelLoader : MonoBehaviour
     }
 
     private IEnumerator loadSceneAsync(int sceneIndex){
-        var op = SceneManager.LoadSceneAsync($"Level_{sceneIndex}");
-
-        GameAssetsController.GetInstance().LoadingScene.SetActive(true);
-
-        while(!op.isDone){
-            float progress = Mathf.Clamp01(op.progress / 0.9f);
-            m_slider.value = progress;
-            m_loadingProcess.text = $"{progress * 100.0f}%";
-            yield return null;
-        }
+        return loadSceneAsync($"Level_{sceneIndex}");
     }
 
     private IEnumerator loadSceneAsync(string sceneName){

@@ -43,10 +43,12 @@ public class ScorePopup : MonoBehaviour
 
     public void SetPopupScore(int score) {
         if(score < 0){
+            AudioController.GetInstance().PlayMusic("SubScore");
             m_textMesh.color = Color.red;
             m_textMesh.text = $"-{score}";
         }
         else{
+            AudioController.GetInstance().PlayMusic("AddScore");
             m_textMesh.color = Color.green;
             m_textMesh.text = $"+{score}";
         }

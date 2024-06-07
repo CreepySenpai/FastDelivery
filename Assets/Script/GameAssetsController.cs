@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GameAssetsController : MonoBehaviour
 {
-    private static GameAssetsController instance = null;
+    private static GameAssetsController s_instance = null;
 
     public static GameAssetsController GetInstance() {
-        if (instance == null)
+        if (s_instance == null)
         {
-            instance = GameObject.Find("GameAssetsController").GetComponent<GameAssetsController>();
+            s_instance = GameObject.Find("GameAssetsController").GetComponent<GameAssetsController>();
         }
-        return instance;
+        return s_instance;
     }
 
     public GameObject ScorePopup;

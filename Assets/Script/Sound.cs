@@ -14,6 +14,8 @@ public class Sound
     [Range(0.0f, 2.0f)]
     public float Pitch;
 
+    public bool IsLoop;
+
     public AudioClip AudioClip;
 
     [HideInInspector]

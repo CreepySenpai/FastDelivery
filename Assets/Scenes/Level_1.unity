@@ -872,7 +872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfb735a6f32e644c994df4f9503d7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CircleCollider: {fileID: 267300962}
   m_player: {fileID: 1900597153}
   m_isPlayerContact: 0
   m_consumerSprite: {fileID: 610636148}
@@ -4297,7 +4296,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[0].Name
@@ -4316,6 +4315,10 @@ PrefabInstance:
       value: TimeStartCounter
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[4].Name
+      value: GameBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[0].Pitch
       value: 1
       objectReference: {fileID: 0}
@@ -4329,6 +4332,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[3].Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[4].Pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
@@ -4348,6 +4355,14 @@ PrefabInstance:
       value: 0.508
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[4].IsLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[4].Volume
+      value: 0.298
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[0].AudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ebed335ba5bd44e478fc36641323a294, type: 3}
@@ -4363,6 +4378,10 @@ PrefabInstance:
       propertyPath: Sounds.Array.data[3].AudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7731007c6f6b31d47afcac2131d2ce25, type: 3}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[4].AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 52ccfe4fed2244a44959700d93397b79, type: 3}
     - target: {fileID: 2382629034910772487, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5914,7 +5933,6 @@ MonoBehaviour:
   m_remainTime: 6
   m_playerMovement: {fileID: 1900597153}
   m_remainTimeCounter: {fileID: 1925098601}
-  m_audioController: {fileID: 1318083654}
 --- !u!1 &1811337629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,9 +6534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3c71f0c2db53e40861560d6909778b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelScore: 1000
   m_scoreManager: {fileID: 838782878}
-  m_audioController: {fileID: 1318083654}
 --- !u!114 &1900597162
 MonoBehaviour:
   m_ObjectHideFlags: 0

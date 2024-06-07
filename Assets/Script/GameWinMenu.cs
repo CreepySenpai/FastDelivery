@@ -10,13 +10,11 @@ public class GameWinMenu : MonoBehaviour
 
     public void Home()
     {
-        // GameAssetsController.GetInstance().LoadingScene.SetActive(false);
         m_levelLoader.LoadLevel("Main_Menu");
         Time.timeScale = 1;
     }
 
     public void PlayAgain(){
-        // GameAssetsController.GetInstance().LoadingScene.SetActive(false);
         m_levelLoader.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private void Start() {
-        FindObjectOfType<AudioController>().PlayMusic("Background");
+        AudioController.GetInstance().PlayMusic("Background");
+        
     }
 
     public void QuitGame()
