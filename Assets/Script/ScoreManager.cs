@@ -17,7 +17,14 @@ public class ScoreManager : MonoBehaviour
     private int m_currentScore = 0;
 
     [SerializeField]
-    private GameObject m_scoreText;
+    private TextMeshProUGUI m_scoreText;
+    
+    [SerializeField]
+    private LevelScore m_levelScore;
+
+    private void Start(){
+        SetTotalScore(m_levelScore.Score);
+    }
 
     public void AddScore(int score) {
         m_currentScore += score;
@@ -26,7 +33,7 @@ public class ScoreManager : MonoBehaviour
 
         m_currentScoreImage.fillAmount = (float)m_currentScore / (float)m_totalScore;
 
-        m_scoreText.GetComponent<TextMeshProUGUI>().text = $"{m_currentScore}/{m_totalScore}";
+        m_scoreText.text = $"{m_currentScore}/{m_totalScore}";
     }
 
     public void SetTotalScore(int totalScore) => m_totalScore = totalScore;

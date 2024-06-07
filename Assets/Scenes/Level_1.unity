@@ -2977,7 +2977,8 @@ MonoBehaviour:
   m_currentScoreImage: {fileID: 838782876}
   m_totalScore: 1000
   m_currentScore: 0
-  m_scoreText: {fileID: 1673105058}
+  m_scoreText: {fileID: 1673105060}
+  m_levelScore: {fileID: 4028927722274326749}
 --- !u!1 &843483166
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,24 +4624,72 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[0].Name
       value: ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[1].Name
+      value: AddScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[2].Name
+      value: SubScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[3].Name
+      value: TimeStartCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[0].Pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
-      propertyPath: Sounds.Array.data[0].Volume
+      propertyPath: Sounds.Array.data[1].Pitch
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[2].Pitch
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[3].Pitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[0].Volume
+      value: 0.528
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[1].Volume
+      value: 0.332
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[2].Volume
+      value: 0.374
+      objectReference: {fileID: 0}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[3].Volume
+      value: 0.508
       objectReference: {fileID: 0}
     - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: Sounds.Array.data[0].AudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ebed335ba5bd44e478fc36641323a294, type: 3}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[1].AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e1c302d5915178447b6c86772e0517c1, type: 3}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[2].AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 644340b6140b5834eab522625ed4fec2, type: 3}
+    - target: {fileID: 326443482837452107, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
+      propertyPath: Sounds.Array.data[3].AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7731007c6f6b31d47afcac2131d2ce25, type: 3}
     - target: {fileID: 2382629034910772487, guid: 2ed06711b1e292d428c72d1f7c1d58aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6326,6 +6375,7 @@ MonoBehaviour:
   m_remainTime: 6
   m_playerMovement: {fileID: 1900597153}
   m_remainTimeCounter: {fileID: 1925098601}
+  m_audioController: {fileID: 1318083654}
 --- !u!1 &1811337629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6928,7 +6978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelScore: 1000
-  m_scoreManager: {fileID: 838782874}
+  m_scoreManager: {fileID: 838782878}
+  m_audioController: {fileID: 1318083654}
 --- !u!114 &1900597162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15219,6 +15270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PopUpScore
       objectReference: {fileID: 0}
+    - target: {fileID: 6323538187592849504, guid: 3f5018add0a5f534282beceb9cc76f77, type: 3}
+      propertyPath: m_audioController
+      value: 
+      objectReference: {fileID: 1318083654}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15349,6 +15404,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ea9e39877cdb374bb66ef5c5bde41e2, type: 3}
+--- !u!114 &4028927722274326749 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8896036298537484138, guid: 3ea9e39877cdb374bb66ef5c5bde41e2, type: 3}
+  m_PrefabInstance: {fileID: 4028927722274326748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b011c6d26f490468f7b53cb018d349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4913993419244732638
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class ScorePopup : MonoBehaviour
     }
 
     private const float m_textMoveSpeed = 2.0f;
-
-    [SerializeField]
     private TextMeshPro m_textMesh;
 
     private Color m_textColor;
@@ -46,11 +44,11 @@ public class ScorePopup : MonoBehaviour
     public void SetPopupScore(int score) {
         if(score < 0){
             m_textMesh.color = Color.red;
-            m_textMesh.text = $"-{score.ToString()}";
+            m_textMesh.text = $"-{score}";
         }
         else{
             m_textMesh.color = Color.green;
-            m_textMesh.text = $"+{score.ToString()}";
+            m_textMesh.text = $"+{score}";
         }
         
         m_textColor = m_textMesh.color;

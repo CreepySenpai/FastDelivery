@@ -9,15 +9,14 @@ public class PlayerScore : MonoBehaviour
     public long LevelScore;
 
     [SerializeField]
-    private GameObject m_scoreManager;
+    private ScoreManager m_scoreManager;
+
+    [SerializeField]
+    private AudioController m_audioController;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.B)){
-            UnlockNewLevel();
-        }
-
-        if(m_scoreManager.GetComponent<ScoreManager>().GetCurrentScore() > LevelScore){
+        if(m_scoreManager.GetCurrentScore() > LevelScore){
             UnlockNewLevel();
 
             MenuController.GetInstance().DisableTimeCounter();
@@ -38,11 +37,17 @@ public class PlayerScore : MonoBehaviour
     }
 
     public void AddScore(int score){
-        m_scoreManager.GetComponent<ScoreManager>().AddScore(score);
+        m_scoreManager.AddScore(score);
+        if(score < 0) {
+            m_audioController.PlayMusic("SubScore");
+        }
+        else {
+            m_audioController.PlayMusic("AddScore");
+        }
         ScorePopup.Create(transform.position, score);
     }
 
-    public void ResetScore() => m_scoreManager.GetComponent<ScoreManager>().ResetScore();
+    public void ResetScore() => m_scoreManager.ResetScore();
 
-    public int GetScore() => m_scoreManager.GetComponent<ScoreManager>().GetCurrentScore();
+    public int GetScore() => m_scoreManager.GetCurrentScore();
 }
