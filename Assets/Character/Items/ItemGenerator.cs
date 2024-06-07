@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class ItemGenerator{
@@ -7,5 +8,9 @@ public static class ItemGenerator{
 
     public static void AddItem(Item item) => s_itemList.Add(item);
 
-    public static Item GetRandomItem() => s_itemList[Random.Range(0, s_itemList.Count)];
+    // Note(Creepy): Hate it
+    public static Item GetRandomItem(){
+        var temp = s_itemList[Random.Range(0, s_itemList.Count)];
+        return new(temp.Type, temp.Sprite);
+    }
 }

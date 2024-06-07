@@ -20,7 +20,7 @@ public class LevelMenu : MonoBehaviour
     private int m_levelCount = 0;
 
     private void Awake() {
-        // PlayerPrefs.SetInt("UnlockedLevel", 1);
+        PlayerPrefs.SetInt("UnlockedLevel", 1);
 
         m_levelCount = gameObject.transform.childCount;
 

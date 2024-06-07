@@ -10,25 +10,25 @@ public class TimeCounter : MonoBehaviour
     private TextMeshProUGUI m_timerText;
     
     [SerializeField]
-    private double m_remainTime;
+    private LevelInfo m_levelInfo;
 
     [SerializeField]
     private GameObject m_playerMovement;
 
     private void Start(){
-        var minutes = Mathf.FloorToInt((float)m_remainTime / 60);
-        var seconds = Mathf.FloorToInt((float)m_remainTime % 60);
+        var minutes = Mathf.FloorToInt((float)m_levelInfo.RemainTime / 60);
+        var seconds = Mathf.FloorToInt((float)m_levelInfo.RemainTime % 60);
         m_timerText.text = string.Format($"{minutes:00}:{seconds:00}");
     }
 
     private void Update()
     {
 
-        if(m_remainTime > 0){
-            m_remainTime -= Time.deltaTime;
+        if(m_levelInfo.RemainTime > 0){
+            m_levelInfo.RemainTime -= Time.deltaTime;
         }
         else {
-            m_remainTime = 0;
+            m_levelInfo.RemainTime = 0;
             m_timerText.color = Color.red;
 
             MenuController.GetInstance().ActiveGameOverMenu();
@@ -38,10 +38,11 @@ public class TimeCounter : MonoBehaviour
 
             MenuController.GetInstance().DisableRemainTime();
 
+            GameAssetsController.GetInstance().PlayerBackPack.SetActive(false);
         }
         
-        var minutes = Mathf.FloorToInt((float)m_remainTime / 60);
-        var seconds = Mathf.FloorToInt((float)m_remainTime % 60);
+        var minutes = Mathf.FloorToInt((float)m_levelInfo.RemainTime / 60);
+        var seconds = Mathf.FloorToInt((float)m_levelInfo.RemainTime % 60);
         
         m_timerText.text = string.Format($"{minutes:00}:{seconds:00}");
     }

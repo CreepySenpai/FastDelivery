@@ -20,16 +20,17 @@ public class ScoreManager : MonoBehaviour
     private TextMeshProUGUI m_scoreText;
     
     [SerializeField]
-    private LevelScore m_levelScore;
+    private LevelInfo m_levelInfo;
 
     private void Start(){
-        SetTotalScore(m_levelScore.Score);
+        SetTotalScore(m_levelInfo.Score);
+        m_scoreText.text = $"{m_currentScore}/{m_totalScore}";
     }
 
     public void AddScore(int score) {
         m_currentScore += score;
 
-        m_currentScore = Math.Clamp(m_currentScore, 0, m_totalScore);
+        m_currentScore = Math.Clamp(m_currentScore, 0, m_totalScore + 10);  // Add Some Amount
 
         m_currentScoreImage.fillAmount = (float)m_currentScore / (float)m_totalScore;
 

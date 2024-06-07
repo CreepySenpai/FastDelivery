@@ -27,6 +27,8 @@ public class PlayerItem : MonoBehaviour
         setItemImage();
     }
 
+    public Item GetCurrentItem() => m_currentItem;
+
     private void setItemImage() {
         m_itemInBackPack.GetComponent<Image>().sprite = m_currentItem.Sprite;
     }

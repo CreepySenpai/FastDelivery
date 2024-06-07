@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,13 @@ public enum ItemType : int {
 
 }
 
+[Serializable]
 public class Item
 {
     public ItemType Type{get; set;}
     public Sprite Sprite{get; set;}
+
+    public string SpritePath{get; set;}
 
     public Item() {
         
@@ -20,7 +24,12 @@ public class Item
     public Item(ItemType type) => Type = type;
 
     public Item(ItemType type, string path) : this(type) {
+        SpritePath = path;
         Sprite = Resources.Load<Sprite>(path);
+    }
+
+    public Item(ItemType type, Sprite sprite) : this(type) {
+        Sprite = sprite;
     }
 
 

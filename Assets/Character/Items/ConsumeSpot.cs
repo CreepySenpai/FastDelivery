@@ -5,9 +5,6 @@ using UnityEngine;
 public class ConsumeSpot : MonoBehaviour
 {
     [SerializeField]
-    private CircleCollider2D m_CircleCollider;
-
-    [SerializeField]
     private GameObject m_player;
 
     [SerializeField]
@@ -15,17 +12,21 @@ public class ConsumeSpot : MonoBehaviour
 
     private Item m_currentItem = new(ItemType.NONE);
 
+    [SerializeField]
+    private SpriteRenderer m_consumerSprite;
+
     void Start(){
         Item.QuestionMaskSprite = Resources.Load<Sprite>("Item_Delivery/Question_Mark");
-        
-        m_CircleCollider = GetComponent<CircleCollider2D>();
 
         m_currentItem = ItemGenerator.GetRandomItem();
         Debug.Log($"Gonna Create Random Item: ${m_currentItem.Type.ToString()}");
     }
 
     private void Update() {
-        if(!m_isPlayerContact) return;
+
+        if(!m_isPlayerContact) {
+            return;
+        }
 
         if(Input.GetKeyDown(KeyCode.Space)){
 
@@ -54,12 +55,16 @@ public class ConsumeSpot : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = m_currentItem.Sprite;
-        m_isPlayerContact = true;
+        if(other.gameObject.name == "Player"){
+            m_consumerSprite.sprite = m_currentItem.Sprite;
+            m_isPlayerContact = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = Item.QuestionMaskSprite;
-        m_isPlayerContact = false;
+        if(other.gameObject.name == "Player"){
+            m_consumerSprite.sprite = Item.QuestionMaskSprite;
+            m_isPlayerContact = false;
+        }
     }
 }

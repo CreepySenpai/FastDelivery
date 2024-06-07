@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelScore : MonoBehaviour
+public class LevelInfo : MonoBehaviour
 {
     public int Score;
+
+    public double RemainTime;
 }

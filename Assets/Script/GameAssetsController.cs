@@ -17,4 +17,8 @@ public class GameAssetsController : MonoBehaviour
     public GameObject ScorePopup;
 
     public GameObject LoadingScene;
+
+    public GameObject PlayerBackPack;
+
+    public GameObject ScoreBar;
 }

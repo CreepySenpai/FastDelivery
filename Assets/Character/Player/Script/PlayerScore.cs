@@ -5,24 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour
 {
-    // TODO(Creepy): Move to level manager
-    public long LevelScore;
-
     [SerializeField]
     private ScoreManager m_scoreManager;
 
     [SerializeField]
     private AudioController m_audioController;
 
+    private bool m_isUnlocked = false;
+
     void Update()
     {
-        if(m_scoreManager.GetCurrentScore() > LevelScore){
-            UnlockNewLevel();
+        if(!m_isUnlocked){
+            if(m_scoreManager.GetCurrentScore() >= m_scoreManager.GetTotalScore()){
+                UnlockNewLevel();
 
-            MenuController.GetInstance().DisableTimeCounter();
-            MenuController.GetInstance().ActiveWinMenu();
-            // gameObject.SetActive(false);
+                MenuController.GetInstance().DisableTimeCounter();
+                MenuController.GetInstance().DisablePauseButton();
+                
+                MenuController.GetInstance().ActiveWinMenu();
+                GameAssetsController.GetInstance().PlayerBackPack.SetActive(false);
+                GameAssetsController.GetInstance().ScoreBar.SetActive(false);
+                
+                m_isUnlocked = true;
+            }
         }
+        
 
     }
 
