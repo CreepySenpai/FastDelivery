@@ -29,7 +29,8 @@ public class TimeCounter : MonoBehaviour
         }
         else {
             AudioController.GetInstance().StopMusic("GameBattle");
-            
+            AudioController.GetInstance().PlayMusic("YouLoose");
+
             m_levelInfo.RemainTime = 0;
             m_timerText.color = Color.red;
 

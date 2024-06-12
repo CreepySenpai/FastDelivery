@@ -15,7 +15,7 @@ public class PlayerScore : MonoBehaviour
         if(!m_isUnlocked){
             if(m_scoreManager.GetCurrentScore() >= m_scoreManager.GetTotalScore()){
                 AudioController.GetInstance().StopMusic("GameBattle");
-                
+                AudioController.GetInstance().PlayMusic("YouWin");
                 UnlockNewLevel();
 
                 MenuController.GetInstance().DisableTimeCounter();
