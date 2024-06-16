@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum ItemType : int {
     NONE = 0, APPLE = 10, BOOK = 12, BANANA = 14, EGG = 16, CABBAGE = 18, FLOUR = 20, MILK = 22, MEAT = 24
-    //, CHOCOLATE = 10, OIL = 12, POTATO_CHIP = 14, COKE = 16, GLOVES = 18, DUCK = 20, POTATO_BAG = 22
+    , CHOCOLATE = 10, OIL = 12, POTATO_CHIP = 14, COKE = 16, GLOVES = 18, DUCK = 20, POTATO_BAG = 22
 
 }
 
