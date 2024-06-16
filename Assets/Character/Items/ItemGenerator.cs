@@ -8,7 +8,7 @@ public static class ItemGenerator{
 
     public static void AddItem(Item item) => s_itemList.Add(item);
 
-    // Note(Creepy): Hate it
+
     public static Item GetRandomItem(){
         var temp = s_itemList[Random.Range(0, s_itemList.Count)];
         return new(temp.Type, temp.Sprite);

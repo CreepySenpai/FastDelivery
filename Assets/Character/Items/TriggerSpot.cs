@@ -20,22 +20,27 @@ public class TriggerSpot : MonoBehaviour
 
     // Note(Creepy): Call Awake because it call before Start() -> GetRandomItem()
     void Awake(){
-        
-        // ItemGenerator.AddItem(new(ItemType.APPLE, "Item_Delivery/red_apple_p"));
-        // ItemGenerator.AddItem(new(ItemType.BOOK, "Item_Delivery/Book"));
-        // ItemGenerator.AddItem(new(ItemType.BANANA, "Item_Delivery/banana"));
-        // ItemGenerator.AddItem(new(ItemType.EGG, "Item_Delivery/egg_brown_p"));
-        // ItemGenerator.AddItem(new(ItemType.CABBAGE, "Item_Delivery/cabbage_p"));
-        // ItemGenerator.AddItem(new(ItemType.FLOUR, "Item_Delivery/flour"));
-        // ItemGenerator.AddItem(new(ItemType.MILK, "Item_Delivery/milk_plastic"));
-        // ItemGenerator.AddItem(new(ItemType.MEAT, "Item_Delivery/meat2_p"));
-        // ItemGenerator.AddItem(new(ItemType.CHOCOLATE, "Item_Delivery/milk_chocolate"));
-        // ItemGenerator.AddItem(new(ItemType.OIL, "Item_Delivery/olive_oil"));
-        // ItemGenerator.AddItem(new(ItemType.POTATO_CHIP, "Item_Delivery/potatochip_blue"));
-        // ItemGenerator.AddItem(new(ItemType.COKE, "Item_Delivery/soft_drink_red"));
-        ItemGenerator.AddItem(new(ItemType.GLOVES, "Item_Delivery/cleaning_gloves"));
-        ItemGenerator.AddItem(new(ItemType.DUCK, "Item_Delivery/rubber_duck"));
-        ItemGenerator.AddItem(new(ItemType.POTATO_BAG, "Item_Delivery/potato_p"));
+        List<Item> levelGenList = new();
+        levelGenList.Add(new(ItemType.APPLE, "Item_Delivery/red_apple_p"));
+        levelGenList.Add(new(ItemType.APPLE, "Item_Delivery/red_apple_p"));
+        levelGenList.Add(new(ItemType.BANANA, "Item_Delivery/banana"));
+        levelGenList.Add(new(ItemType.EGG, "Item_Delivery/egg_brown_p"));
+        levelGenList.Add(new(ItemType.CABBAGE, "Item_Delivery/cabbage_p"));
+        levelGenList.Add(new(ItemType.FLOUR, "Item_Delivery/flour"));
+        levelGenList.Add(new(ItemType.MILK, "Item_Delivery/milk_plastic"));
+        levelGenList.Add(new(ItemType.MEAT, "Item_Delivery/meat2_p"));
+        levelGenList.Add(new(ItemType.CHOCOLATE, "Item_Delivery/milk_chocolate"));
+        levelGenList.Add(new(ItemType.OIL, "Item_Delivery/olive_oil"));
+        levelGenList.Add(new(ItemType.POTATO_CHIP, "Item_Delivery/potatochip_blue"));
+        levelGenList.Add(new(ItemType.COKE, "Item_Delivery/soft_drink_red"));
+        levelGenList.Add(new(ItemType.GLOVES, "Item_Delivery/cleaning_gloves"));
+        levelGenList.Add(new(ItemType.DUCK, "Item_Delivery/rubber_duck"));
+        levelGenList.Add(new(ItemType.POTATO_BAG, "Item_Delivery/potato_p"));
+
+        for(int i = 0; i < m_queueMaxSize; ++i){
+            var item = levelGenList[Random.Range(0, levelGenList.Count)];
+            ItemGenerator.AddItem(new(item.Type, item.Sprite));
+        }
 
         // Note(Creepy): Because OnTriggerEnter2D call first Update so we need to ensure queue has at least 1 item
         m_randomQueue.Enqueue(ItemGenerator.GetRandomItem());
@@ -48,10 +53,6 @@ public class TriggerSpot : MonoBehaviour
         while(m_randomQueue.Count < m_queueMaxSize){
             m_randomQueue.Enqueue(ItemGenerator.GetRandomItem());
         }
-
-        // foreach(Item item in m_randomQueue){
-        //     Debug.Log("It :" + item.Type.ToString());
-        // }
 
         if(Input.GetKeyDown(KeyCode.Space)){
             var playerItem = m_player.GetComponent<PlayerItem>();
