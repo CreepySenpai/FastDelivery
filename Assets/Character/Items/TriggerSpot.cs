@@ -29,13 +29,13 @@ public class TriggerSpot : MonoBehaviour
         levelGenList.Add(new(ItemType.FLOUR, "Item_Delivery/flour"));
         levelGenList.Add(new(ItemType.MILK, "Item_Delivery/milk_plastic"));
         levelGenList.Add(new(ItemType.MEAT, "Item_Delivery/meat2_p"));
-        levelGenList.Add(new(ItemType.CHOCOLATE, "Item_Delivery/milk_chocolate"));
-        levelGenList.Add(new(ItemType.OIL, "Item_Delivery/olive_oil"));
-        levelGenList.Add(new(ItemType.POTATO_CHIP, "Item_Delivery/potatochip_blue"));
-        levelGenList.Add(new(ItemType.COKE, "Item_Delivery/soft_drink_red"));
-        levelGenList.Add(new(ItemType.GLOVES, "Item_Delivery/cleaning_gloves"));
-        levelGenList.Add(new(ItemType.DUCK, "Item_Delivery/rubber_duck"));
-        levelGenList.Add(new(ItemType.POTATO_BAG, "Item_Delivery/potato_p"));
+        //levelGenList.Add(new(ItemType.CHOCOLATE, "Item_Delivery/milk_chocolate"));
+        //levelGenList.Add(new(ItemType.OIL, "Item_Delivery/olive_oil"));
+        //levelGenList.Add(new(ItemType.POTATO_CHIP, "Item_Delivery/potatochip_blue"));
+        //levelGenList.Add(new(ItemType.COKE, "Item_Delivery/soft_drink_red"));
+        //levelGenList.Add(new(ItemType.GLOVES, "Item_Delivery/cleaning_gloves"));
+        //levelGenList.Add(new(ItemType.DUCK, "Item_Delivery/rubber_duck"));
+        //levelGenList.Add(new(ItemType.POTATO_BAG, "Item_Delivery/potato_p"));
 
         for(int i = 0; i < m_queueMaxSize; ++i){
             var item = levelGenList[Random.Range(0, levelGenList.Count)];
