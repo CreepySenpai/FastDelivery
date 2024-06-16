@@ -19,6 +19,7 @@ public class LevelMenu : MonoBehaviour
 
     private int m_levelCount = 0;
 
+    // NOTE(Creepy): Reset When Play Test
     private void Awake() {
         PlayerPrefs.SetInt("UnlockedLevel", 1);
 

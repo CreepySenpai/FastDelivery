@@ -42,6 +42,7 @@ public class TimeCounter : MonoBehaviour
             MenuController.GetInstance().DisableRemainTime();
 
             GameAssetsController.GetInstance().PlayerBackPack.SetActive(false);
+            GameAssetsController.GetInstance().ScoreBar.SetActive(false);
         }
         
         var minutes = Mathf.FloorToInt((float)m_levelInfo.RemainTime / 60);

@@ -37,9 +37,19 @@ public class TriggerSpot : MonoBehaviour
         levelGenList.Add(new(ItemType.DUCK, "Item_Delivery/rubber_duck"));
         levelGenList.Add(new(ItemType.POTATO_BAG, "Item_Delivery/potato_p"));
 
-        for(int i = 0; i < m_queueMaxSize; ++i){
+        while(ItemGenerator.Size() < m_queueMaxSize){
             var item = levelGenList[Random.Range(0, levelGenList.Count)];
-            ItemGenerator.AddItem(new(item.Type, item.Sprite));
+
+            bool isExit = false;
+            foreach(var itemInQueue in ItemGenerator.GetListItem()){
+                if(item.Type == itemInQueue.Type){
+                    isExit = true;
+                }
+            }
+
+            if(!isExit){
+                ItemGenerator.AddItem(new(item.Type, item.Sprite));
+            }
         }
 
         // Note(Creepy): Because OnTriggerEnter2D call first Update so we need to ensure queue has at least 1 item

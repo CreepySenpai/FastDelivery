@@ -11160,6 +11160,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1318083654}
+    - target: {fileID: 2709565680031446634, guid: ae2abfb516d5adb4990e40049726f3aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 3308287981498120665, guid: ae2abfb516d5adb4990e40049726f3aa, type: 3}
       propertyPath: m_Name
       value: GameOverMenu
@@ -11400,11 +11404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8896036298537484138, guid: 3ea9e39877cdb374bb66ef5c5bde41e2, type: 3}
       propertyPath: Score
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8896036298537484138, guid: 3ea9e39877cdb374bb66ef5c5bde41e2, type: 3}
       propertyPath: RemainTime
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
